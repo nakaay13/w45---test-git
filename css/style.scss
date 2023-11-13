@@ -1,0 +1,39 @@
+@import "variables";
+@import"base/reset";
+@import "mixins";
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: (100%/12)*$i;
+    }
+}
+
+body{
+    background-color: $primary-color;
+}
+
+header{
+    color: $secondary-color;
+    nav{
+        background-color: $idk-color;
+        ul{
+            list-style: none;
+            li{
+                display: flex;
+                margin: 0 10px;
+                a{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+.btn-prim {
+    @include primary-btn($primary-color);
+    &:hover{
+        background-color: darken($success-color, 30%);
+        color: darken($error-color, 30%);
+    }
+}
+
